@@ -1,0 +1,35 @@
+.connection-line {
+  pointer-events: all;
+}
+
+.connection-path {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 1s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.connection-line.selected .connection-path {
+  stroke-width: 4;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.connection-line:hover .connection-path {
+  stroke-width: 3;
+  filter: drop-shadow(0 0 8px var(--accent-blue-2));
+}
