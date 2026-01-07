@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
 import {
+  Server,
   Database,
   Network,
   GitBranch,
   Box,
   HardDrive,
   Globe,
-  Mail,
+  Globe2,
+  Inbox,
   Zap,
-  Shield
+  Shield,
+  Layers,
+  Hexagon,
+  Cpu,
+  Layout,
+  Component as ComponentIcon,
+  Radio,
+  GitGraph,
+  GitPullRequest,
+  Activity,
+  FileText
 } from 'lucide-react';
 import type { DiagramComponent as DiagramComponentType } from '../types';
 import { COMPONENT_DEFINITIONS, COMPONENT_WIDTH, COMPONENT_HEIGHT } from '../constants';
@@ -24,15 +36,27 @@ interface DiagramComponentProps {
 }
 
 const iconMap: Record<string, React.ComponentType<{ size: number }>> = {
+  server: Server,
   database: Database,
   network: Network,
   'git-branch': GitBranch,
   box: Box,
   'hard-drive': HardDrive,
   globe: Globe,
-  mail: Mail,
+  'globe-2': Globe2,
+  inbox: Inbox,
   zap: Zap,
-  shield: Shield
+  shield: Shield,
+  layers: Layers,
+  hexagon: Hexagon,
+  cpu: Cpu,
+  layout: Layout,
+  component: ComponentIcon,
+  radio: Radio,
+  'git-graph': GitGraph,
+  'git-pull-request': GitPullRequest,
+  activity: Activity,
+  'file-text': FileText
 };
 
 export const DiagramComponent: React.FC<DiagramComponentProps> = ({

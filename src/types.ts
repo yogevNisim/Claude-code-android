@@ -1,15 +1,40 @@
 export type ComponentType =
+  // Infrastructure
+  | 'server'
+  | 'container'
+  | 'load-balancer'
+  | 'cdn'
+  | 'dns'
+
+  // Databases
   | 'postgresql'
   | 'mongodb'
   | 'redis'
-  | 'api-gateway'
-  | 'load-balancer'
-  | 'kubernetes'
-  | 's3'
-  | 'cdn'
+  | 'database'
+
+  // Storage & Queue
+  | 'object-storage'
   | 'message-queue'
+  | 'cache'
+
+  // Compute
   | 'lambda'
-  | 'auth';
+  | 'kubernetes'
+  | 'worker'
+
+  // Application Services
+  | 'frontend'
+  | 'backend'
+  | 'api-gateway'
+  | 'microservice'
+  | 'websocket'
+  | 'graphql'
+  | 'auth'
+
+  // Tools & DevOps
+  | 'cicd'
+  | 'monitoring'
+  | 'logging';
 
 export interface Position {
   x: number;
@@ -36,10 +61,13 @@ export interface CanvasState {
   pan: Position;
 }
 
+export type ComponentCategory = 'Infrastructure' | 'Database' | 'Application' | 'Compute' | 'DevOps';
+
 export interface ComponentDefinition {
   type: ComponentType;
   label: string;
   icon: string;
   color: string;
   description: string;
+  category: ComponentCategory;
 }
