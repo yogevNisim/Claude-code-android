@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - claude/system-architecture-designer-J0tET
+      - main
   workflow_dispatch:
 
 permissions:
